@@ -10,6 +10,14 @@ double solve(double quad, double lin, double abs, double disc)
     return ans;
 }
 
+double solvelin(double lin, double abs)
+{
+    double ans;
+    ans = abs/lin;
+
+    return ans;
+}
+
 int main(int argc, char *argv[])
 {
     if (argc < 4 || argc > 4)
@@ -23,6 +31,16 @@ int main(int argc, char *argv[])
     quad = atof(argv[1]);
     lin = atof(argv[2]);
     abs = atof(argv[3]);
+
+    if (quad == 0)
+    {
+        double ans;
+        ans = solvelin(lin,abs);
+
+        printf("Equation has 1 answer and it's: %.2f\n",ans);
+        return 0;
+    }
+    
 
     disc = lin*lin - 4*quad*abs;
 
